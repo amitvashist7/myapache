@@ -1,0 +1,10 @@
+# Docker Demo Container Image.
+FROM ubuntu:latest
+MAINTAINER Amit Vashist <amitvashist7@gmail.com>
+
+RUN apt-get update
+RUN apt-get install -y apache2
+VOLUME [ "/var/www/html" ]
+ADD index.html /var/www/html/index.html
+CMD [ "/usr/sbin/apache2ctl","-D","FOREGROUND"  ]
+EXPOSE 80

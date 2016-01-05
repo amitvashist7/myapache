@@ -1,0 +1,7 @@
+# Docker Demo Container Image.
+FROM ubuntu:latest
+MAINTAINER Amit Vashist <amitvashist7@gmail.com>
+
+RUN apt-get update
+RUN apt-get install -y apache2
+CMD [ "/usr/sbin/apache2ctl","-D","FOREGROUND"  ]
